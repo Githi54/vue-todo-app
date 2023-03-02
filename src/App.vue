@@ -9,9 +9,6 @@ import Navbar from './components/Navbar.vue'
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:ital,wght@0,300;1,600&family=Poppins:wght@200;400&display=swap');
-body {
-  background-color: #131e2a;
-}
 
 #app {
   font-family: 'Open Sans', sans-serif;
