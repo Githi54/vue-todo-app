@@ -1,29 +1,29 @@
 import { defineStore } from 'pinia'
+import { v4 as uuidv4 } from 'uuid'
 
 type Todo = {
-  id: number
+  id: string
   name: string
+  description: string
   completed: boolean
 }
 
 interface TodosState {
   todoList: Todo[]
-  id: number
 }
 
 export const useTodoListStore = defineStore('todoList', {
   state: (): TodosState => ({
     todoList: [],
-    id: 0
   }),
   actions: {
-    addTodo(name: string) {
-      this.todoList = [...this.todoList, { name, id: this.id++, completed: false }]
+    addTodo(name: string, description: string) {
+      this.todoList = [...this.todoList, { name, id: uuidv4(), description, completed: false }]
     },
-    deleteTodo(todoId: number) {
+    deleteTodo(todoId: string) {
       this.todoList = this.todoList.filter(({ id }) => id !== todoId)
     },
-    updateTodoName(todoId: number, newName: string) {
+    updateTodoName(todoId: string, newName: string) {
       this.todoList = this.todoList.map((todo) => {
         if (todo.id === todoId) {
           todo.name = newName
@@ -32,7 +32,7 @@ export const useTodoListStore = defineStore('todoList', {
         return todo
       })
     },
-    updateTodoCompleted(todoId: number) {
+    updateTodoCompleted(todoId: string) {
       this.todoList = this.todoList.map((todo) => {
         if (todo.id === todoId) {
           todo.completed = !todo.completed
