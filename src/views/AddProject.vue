@@ -25,7 +25,7 @@ export default {
       if (this.name.length === 0) {
         return
       }
-      
+
       store.addTodo(this.name, this.description)
       this.name = ''
       this.description = ''

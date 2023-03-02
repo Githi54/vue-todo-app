@@ -26,9 +26,9 @@ export default {
   },
   methods: {
     deletetodo() {
-        const store = useTodoListStore()
+      const store = useTodoListStore()
 
-        store.deleteTodo(this.todo.id)
+      store.deleteTodo(this.todo.id)
     },
     toggleComplete() {
       const store = useTodoListStore()

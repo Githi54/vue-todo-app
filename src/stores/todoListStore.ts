@@ -14,7 +14,7 @@ interface TodosState {
 
 export const useTodoListStore = defineStore('todoList', {
   state: (): TodosState => ({
-    todoList: [],
+    todoList: []
   }),
   actions: {
     addTodo(name: string, description: string) {

@@ -1,9 +1,9 @@
 <script lang="ts">
-import TodoItem from './TodoItem.vue';
+import TodoItem from './TodoItem.vue'
 
 export default {
-    props: ["todoList"],
-    components: { TodoItem }
+  props: ['todoList'],
+  components: { TodoItem }
 }
 </script>
 
