@@ -3,7 +3,7 @@
     <div class="actions">
       <h3 @click="showDetails = !showDetails">{{ todo.name }}</h3>
       <div class="icons">
-        <!-- <router-link :to="{name:'Edittodo', params:{id:todo.id}}"><span class="material-symbols-outlined">edit</span></router-link> -->
+        <span class="material-symbols-outlined" @click="showEdit = true">edit</span>
         <span @click="toggleComplete" class="material-symbols-outlined tick">done</span>
         <span @click="deletetodo" class="material-symbols-outlined delete">delete</span>
       </div>
@@ -11,31 +11,35 @@
     <div v-if="showDetails" class="details">
       <p>{{ todo.description }}</p>
     </div>
+    <div v-if="showEdit">
+      <EditTodo :id="todo.id" @close="showEdit = false"></EditTodo>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { useTodoListStore } from '@/stores/todoListStore'
+import EditTodo from './EditTodo.vue'
 
 export default {
   props: ['todo'],
   data() {
     return {
-      showDetails: false
+      showDetails: false,
+      showEdit: false
     }
   },
   methods: {
     deletetodo() {
       const store = useTodoListStore()
-
       store.deleteTodo(this.todo.id)
     },
     toggleComplete() {
       const store = useTodoListStore()
-
       store.updateTodoCompleted(this.todo.id)
-    }
-  }
+    },
+  },
+  components: { EditTodo }
 }
 </script>
 

@@ -32,6 +32,15 @@ export const useTodoListStore = defineStore('todoList', {
         return todo
       })
     },
+    updateTodoDescription(todoId: string, newDescription: string) {
+      this.todoList = this.todoList.map((todo) => {
+        if (todo.id === todoId) {
+          todo.description = newDescription
+        }
+
+        return todo
+      })
+    },
     updateTodoCompleted(todoId: string) {
       this.todoList = this.todoList.map((todo) => {
         if (todo.id === todoId) {
