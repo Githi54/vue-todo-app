@@ -2,7 +2,7 @@
   <div>
     <form @submit.prevent="handleUpdate">
       <label>New name: </label>
-      <input type="text" v-model="name" required />
+      <input type="text" v-model="name" />
       <label>New description: </label>
       <textarea v-model="description"></textarea>
       <div class="button-container">
@@ -28,11 +28,16 @@ export default {
     handleUpdate() {
       const store = useTodoListStore()
 
-      if (this.name.trim().length === 0) {
-        return
+      if (this.name.trim().length > 0) {
+        store.updateTodoName(this.id, this.name.trim())
       }
 
-      store.updateTodoName(this.id, this.name.trim())
+      if (this.description.trim().length > 0) {
+        store.updateTodoDescription(this.id, this.description.trim())
+      }
+
+      this.name = ''
+      this.description = ''
     }
   }
 }
