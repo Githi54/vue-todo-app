@@ -22,11 +22,11 @@ export default {
     handleSubmit() {
       const store = useTodoListStore()
 
-      if (this.name.length === 0) {
+      if (this.name.trim().length === 0) {
         return
       }
-      
-      store.addTodo(this.name, this.description)
+
+      store.addTodo(this.name.trim(), this.description.trim())
       this.name = ''
       this.description = ''
     }
@@ -72,6 +72,7 @@ form button {
   display: block;
   margin: 20px auto 0;
   background: #35df90;
+  cursor: pointer;
   color: #fff;
   padding: 10px;
   border: 0;

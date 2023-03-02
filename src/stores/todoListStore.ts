@@ -14,7 +14,7 @@ interface TodosState {
 
 export const useTodoListStore = defineStore('todoList', {
   state: (): TodosState => ({
-    todoList: [],
+    todoList: []
   }),
   actions: {
     addTodo(name: string, description: string) {
@@ -27,6 +27,15 @@ export const useTodoListStore = defineStore('todoList', {
       this.todoList = this.todoList.map((todo) => {
         if (todo.id === todoId) {
           todo.name = newName
+        }
+
+        return todo
+      })
+    },
+    updateTodoDescription(todoId: string, newDescription: string) {
+      this.todoList = this.todoList.map((todo) => {
+        if (todo.id === todoId) {
+          todo.description = newDescription
         }
 
         return todo
