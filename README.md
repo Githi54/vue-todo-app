@@ -1,25 +1,22 @@
-# vue-todo-app
+# Simple Todo list app
 
-This template should help get you started developing with Vue 3 in Vite.
+This is <b>frontend only</b> implementation todo list application. [See demo](https://githi54.github.io/vue-todo-app/)
 
-## Recommended IDE Setup
+## Usage
+- Click 'Add Todo' to write a note <br /> <br />
+![](https://user-images.githubusercontent.com/104434132/222680579-c7b65b6c-7f17-4386-a53c-540a0ffaf1be.gif)
+- Click the todo title to read description and click the check mark if todo completed <br /> <br />
+![](https://user-images.githubusercontent.com/104434132/222681585-e624d9ea-9192-450d-902d-35a85f8a7eb3.gif)
+- Edit youre todo <br /> <br />
+![](https://user-images.githubusercontent.com/104434132/222682224-86272748-479e-472e-ab58-573dbd1d1d8b.gif)
+- Delete youre todo <br /> <br />
+![](https://user-images.githubusercontent.com/104434132/222682609-77700ac0-8d23-4072-b607-c0d166beb9a2.gif)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Stack
+- Vue.js
+- Typescript
+- Pinia
+- HTML/CSS
 
 ## Project Setup
 
